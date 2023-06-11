@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:just_audio/just_audio.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:qrscan/qrscan.dart' as scanner;
@@ -18,6 +19,13 @@ class ScanPage extends StatefulWidget {
 class ScanPageState extends State<ScanPage> with WidgetsBindingObserver {
   double _zoomScale = 0;
   MobileScannerController camera = MobileScannerController();
+  AudioPlayer player = AudioPlayer();
+
+  @override
+  void initState() {
+    super.initState();
+    _setPlayMusic();
+  }
 
   @override
   void dispose() {
@@ -90,11 +98,17 @@ class ScanPageState extends State<ScanPage> with WidgetsBindingObserver {
     );
   }
 
+  //设置播放音效
+  void _setPlayMusic() {
+    player.setAsset('assets/scan.mp3');
+  }
+
   //扫描相机二维码
   Future<void> _scanQrCode(BarcodeCapture capture) async {
     if (await Vibration.hasVibrator() as bool) {
-      Vibration.vibrate(duration: 100, amplitude: 200);
+      Vibration.vibrate(duration: 500, amplitude: 255);
     }
+    player.play();
     camera.stop();
     List<Barcode> barcodes = capture.barcodes;
     String result = barcodes[0].rawValue as String;
