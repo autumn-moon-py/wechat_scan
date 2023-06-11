@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter",
+            "program": "lib/main.dart",
+            "request": "launch",
+            "type": "dart",
+            "args": [
+                "-vv",
+                "--warning-mode all"
+            ],
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+name: wechat_scan
+description: A new Flutter project.
+publish_to: "none"
+version: 1.0.0+1
+environment:
+  sdk: ">=3.0.2 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  get: ^4.6.5
+  url_launcher: ^6.1.8
+  wechat_assets_picker: ^8.5.0
+  qrscan: ^0.3.3
+  mobile_scanner: ^3.2.0
+  vibration: ^1.7.7
+  qr_flutter: ^4.1.0
+  image_gallery_saver_v3: ^1.0.0
+  flutter_easyloading: ^3.0.5
+  camera: ^0.10.5+2
+  http: ^0.13.6
+  crypto: ^3.0.3
+  connectivity_plus: ^4.0.1
+  image: ^4.0.17
+  flutter_shortcuts: ^1.3.0
+  just_audio: ^0.9.34
+  android_intent_plus: ^4.0.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
