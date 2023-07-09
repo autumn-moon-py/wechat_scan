@@ -6,8 +6,7 @@
             "request": "launch",
             "type": "dart",
             "args": [
-                "-vv",
-                "--warning-mode all"
+                "-vv"
             ],
         }
     ]
